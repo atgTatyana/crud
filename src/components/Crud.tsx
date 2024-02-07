@@ -34,24 +34,20 @@ export const Crud = () => {
   }, []);
 
   const handleCreate = (form: Inote) => {
-    (async () => {
-      await fetch(url, {
-        method: 'POST',
-        body: JSON.stringify(form),
-      })
-    })();
-
-    fetchGet();
+    fetch(url, {
+      method: 'POST',
+      body: JSON.stringify(form),
+    }).then(() => {
+      fetchGet();
+    })
   }
 
   const handleDelete = (id: number) => {
-    (async () => {
-      await fetch(url + "/" + id, {
-        method: 'DELETE',
-      })
-    })();
-
-    fetchGet();
+    fetch(url + "/" + id, {
+      method: 'DELETE',
+    }).then(() => {
+      fetchGet();
+    })
   }
 
   const handleClick = () => {
