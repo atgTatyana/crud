@@ -61,6 +61,8 @@ h4 {
   border: 1px solid black;
   position: relative;
   z-index: 2;
+  word-wrap: break-word;
+  padding: 5px;
 }
 
 form {
